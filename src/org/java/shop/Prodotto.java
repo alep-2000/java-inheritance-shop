@@ -73,7 +73,6 @@ public class Prodotto {
 				+ "prezzo base: " + String.format("%.02f", getPrezzo()) + "€"+ "\n"
 				+ "iva: " + getIva() + "%" + "\n"
 				+ "prezzo con iva: " + String.format("%.02f", getPrezzoIva()) + "€"+ "\n"
-				+ "codice + nome: " + getCodiceNome()+ "\n"
-				+"---------------------------------";
+				+ "codice + nome: " + getCodiceNome() + "\n";
 	}
 }

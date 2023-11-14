@@ -1,42 +1,19 @@
 package org.java.shop;
 
-import java.util.Random;
-
 public class Carrello {
 
 	public static void main(String[] args) {
 		
-		 String[ ] prodotti = {
-		            "Smartphone",
-		            "Fotocamera DSLR",
-		            "Laptop",
-		            "Smartwatch",
-		            "Scarpe da corsa",
-		            "Libro di fantascienza",
-		            "Tastiera meccanica",
-		            "Borsa a tracolla",
-		            "Forno a microonde",
-		            "Puzzle 1000 pezzi"
-		 };
-
-		 String[] descrizioni = {
-		            "Uno smartphone di ultima generazione con fotocamera ad alta risoluzione e display ampio.",
-		            "Una fotocamera DSLR professionale con sensori avanzati per scatti di alta qualità.",
-		            "Un laptop potente con processore veloce e ampio spazio di archiviazione.",
-		            "Uno smartwatch con monitoraggio fitness e notifiche smart per la tua vita quotidiana.",
-		            "Scarpe leggere e ammortizzate progettate per il comfort durante la corsa.",
-		            "Un libro avvincente di fantascienza scritto da un autore rinomato.",
-		            "Una tastiera meccanica con retroilluminazione RGB per un'esperienza di gioco immersiva.",
-		            "Una elegante borsa a tracolla perfetta per l'uso quotidiano.",
-		            "Un forno a microonde con diverse funzioni di cottura per preparare rapidamente i tuoi pasti.",
-		            "Un puzzle stimolante con 1000 pezzi per sfidare la tua mente e la tua pazienza.",
-		 };
+		Prodotto p = new Prodotto(102002093, "Smartphone", "Modello Samsung ultra performante", 300, 20);
+		System.out.println(p);
 		
-		Random r = new Random();
+		Smartphone s = new Smartphone(102002093, "Smartphone", "Modello Samsung ultra performante", 300, 20,"101020020020020202",32);
+		System.out.println(s);
 		
-		for(int x=0; x<prodotti.length; x++) {
-			Prodotto p = new Prodotto(r.nextInt(100000000), prodotti[x], descrizioni[x] , r.nextFloat(0,300), r.nextInt(60));
-			System.out.println(p);
-		}
+		Televisori t = new Televisori(1012010291, "Televisore", "Televisore ultra piatto", 800, 10, 65, true);
+		System.out.println(t);
+		
+		Cuffie c = new Cuffie(1103801204, "Cuffia", "Cuffie JBL", 1200, 4, "Rosso", true, false);
+		System.out.println(c);
 	}
 }

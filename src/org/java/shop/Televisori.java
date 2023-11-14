@@ -4,7 +4,7 @@ public class Televisori extends Prodotto{
 	private int dimensioni;
 	private boolean smart;
 	
-	public Televisori(int codice, String nome, String descrizione, float prezzo, int iva, String IMEI, int qMemoria) {
+	public Televisori(int codice, String nome, String descrizione, float prezzo, int iva, int dimensioni, boolean smart) {
 			
 			super(codice, nome, descrizione, prezzo, iva);
 			
@@ -26,6 +26,14 @@ public class Televisori extends Prodotto{
 	
 	public void setSmart(boolean smart) {
 		this.smart = smart;
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()  + "\n"
+				+"Dimensioni: " + getDimensioni() + " pollici" + "\n"
+				+"Smart: " + isSmart()+ "\n"
+				+"---------------------------------------------" + "\n";
 	}
 
 }
