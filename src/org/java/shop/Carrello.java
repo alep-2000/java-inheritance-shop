@@ -2,10 +2,9 @@ package org.java.shop;
 
 import java.util.Random;
 
-public class Main {
+public class Carrello {
+
 	public static void main(String[] args) {
-		
-		
 		
 		 String[ ] prodotti = {
 		            "Smartphone",

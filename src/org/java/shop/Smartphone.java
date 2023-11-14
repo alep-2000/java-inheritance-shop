@@ -1,10 +1,10 @@
 package org.java.shop;
 
 public class Smartphone extends Prodotto {
-	private int IMEI;
+	private String IMEI;
 	private int qMemoria;
 	
-	public Smartphone(int codice, String nome, String descrizione, float prezzo, int iva, int IMEI, int qMemoria) {
+	public Smartphone(int codice, String nome, String descrizione, float prezzo, int iva, String IMEI, int qMemoria) {
 		
 		super(codice, nome, descrizione, prezzo, iva);
 		
@@ -12,11 +12,11 @@ public class Smartphone extends Prodotto {
 		setqMemoria(qMemoria);
 	}
 
-	public int getIMEI() {
+	public String getIMEI() {
 		return IMEI;
 	}
 
-	public void setIMEI(int iMEI) {
+	public void setIMEI(String iMEI) {
 		IMEI = iMEI;
 	}
 
