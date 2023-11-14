@@ -1,5 +1,6 @@
 package org.java.shop;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Carrello {
@@ -18,10 +19,22 @@ public class Carrello {
 		Cuffie c = new Cuffie(1103801204, "Cuffia", "Cuffie JBL", 1200, 4, "Rosso", true, false);
 		System.out.println(c);
 		
+		boolean nuovoProdotto = false;
+		boolean smart = false;
+		boolean wireless = false;
+		boolean cablate = false;
+		
 		while(true) {
 			Scanner in = new Scanner(System.in);
-			System.out.print("Vuoi inserire un nuovo prodotto? ");
+			System.out.print("Vuoi inserire un nuovo prodotto? (SI/NO)");
 			String strP = in.nextLine();
+			
+			if(strP.equals("SI")) {
+				nuovoProdotto = true;
+			}
+			
+			if(strP.equals("NO"))break;
+			
 			
 			System.out.print("Inserisci il codice: ");
 			String strCodice = in.nextLine();
@@ -38,8 +51,15 @@ public class Carrello {
 			System.out.print("Inserisci l'iva: ");
 			String strIva = in.nextLine();
 			
+			int[] prodotto = new int[5];
+			
+			for(int i= 0; i<prodotto.length; i++) {
+				System.out.println(strCodice + strNome + strDescrizione + strPrezzo + strIva);
+			}
+			
 			System.out.print("Quale? Smartphone/Televisori/Cuffie ");
 			String strQp = in.nextLine();
+			
 			
 			if(strQp.equals("Smartphone")) {
 				System.out.print("Inserisci il codice IMEI: ");
@@ -55,6 +75,10 @@ public class Carrello {
 				
 				System.out.print("Inserisci se è smart: (SI/NO)");
 				String strSmart = in.nextLine();
+				
+				if(strSmart.equals("SI")) {
+					smart = true;
+				}
 			}
 			
 			if(strQp.equals("Cuffie")) {
@@ -64,8 +88,16 @@ public class Carrello {
 				System.out.print("Inserisci se è wireless: (SI/NO");
 				String strWireless = in.nextLine();
 				
+				if(strWireless.equals("SI")) {
+					wireless = true;
+				}
+				
 				System.out.print("Inserisci se è cablata: (SI/NO");
 				String strCablata = in.nextLine();
+				
+				if(strCablata.equals("SI")) {
+					cablate = true;
+				}
 			}
 			
 			in.close();
