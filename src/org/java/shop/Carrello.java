@@ -27,11 +27,11 @@ import java.util.Scanner;
 	            if (strP.equals("no"))break;
 	          
 	            System.out.print("Quale? Smartphone/Televisori/Cuffie ");
-	            String strQp = in.nextLine();
+	            String strQp = in.nextLine().toLowerCase();
 
 	            System.out.print("Inserisci il codice: ");
 	            String strCodice = in.nextLine();
-	            int intCodice = Integer.valueOf(strCodice);
+	            
 
 	            System.out.print("Inserisci il nome del prodotto: ");
 	            String strNome = in.nextLine();
@@ -88,23 +88,23 @@ import java.util.Scanner;
 	            
 	            String CapitalizedProductType = strQp.substring(0, 1).toUpperCase() + strQp.substring(1).toLowerCase();
 	            
-	            switch (strQp) {
+	            switch (CapitalizedProductType) {
 	                case "Smartphone": {
 	                    
-						prodotti[i] = new Smartphone(intCodice, strNome, strDescrizione, intPrezzo, intIva, strIMEI, intMemoria);
+						prodotti[i] = new Smartphone(strCodice, strNome, strDescrizione, intPrezzo, intIva, strIMEI, intMemoria);
 	                    i++;
 						break;
 	                }
-	                case "Televisore": {
+	                case "Televisori": {
 	                    
-						prodotti[i] = new Televisori(intCodice, strNome, strDescrizione, intPrezzo, intIva, intDimensioni, smart);
+						prodotti[i] = new Televisori(strCodice, strNome, strDescrizione, intPrezzo, intIva, intDimensioni, smart);
 						i++;
 						break;
 	                }
 	                case "Cuffie": {
 	                    
 						
-						prodotti[i] = new Cuffie(intCodice, strNome, strDescrizione, intPrezzo, intIva, strColore, wireless, cablate);
+						prodotti[i] = new Cuffie(strCodice, strNome, strDescrizione, intPrezzo, intIva, strColore, wireless, cablate);
 						i++;
 						break;
 	                }
@@ -114,21 +114,21 @@ import java.util.Scanner;
 	        }
 	        
 	        System.out.println("Tessera fedeltà si/no: ");
-	        String strP = in.nextLine();
-	        boolean fedelta = strP.equals("si");
+	        String strF = in.nextLine();
+	        boolean fedelta = strF.equals("si");
 	        
 	        float sum = 0;
-	        for (int j = 0; j <i; j++) {
+	        for (int j = 0; j < i; j++) {
 	            Prodotto p = prodotti[j];
 	            float prezzoFinale = p.getPrezzoIva(fedelta);
 	            
 	            sum += prezzoFinale;
 	            
 	            System.out.println("Nome: " + p.getNome());
-				System.out.println("Prezzo finale: " + prezzoFinale);
+				System.out.println("Prezzo finale: " + String.format("%.02f", prezzoFinale) + "€");
 				System.out.println("\n-------------------------\n");
 	        }
 	        
-	        System.out.println("Totale: " + sum);
+	        System.out.println("Totale: " + String.format("%.02f", sum) + "€");
 	    }
 	}

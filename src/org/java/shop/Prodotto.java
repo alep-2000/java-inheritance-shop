@@ -1,24 +1,24 @@
 package org.java.shop;
 
 public class Prodotto {
-	private int codice;
+	private String codice;
 	private String nome;
 	private String descrizione;
 	private float prezzo;
 	private int iva;
 	
-	public Prodotto(int codice, String nome, String descrizione, float prezzo, int iva){
-		this.codice = codice;
-		this.nome = nome;
-		this.descrizione = descrizione;
-		this.prezzo = prezzo;
-		this.iva = iva;
+	public Prodotto(String codice, String nome, String descrizione, float prezzo, int iva){
+		setCodice(codice);
+		setNome(nome);
+		setDescrizione(descrizione);
+		setPrezzo(prezzo);
+		setIva(iva);
 	}
 	
-	public int getCodice() {
+	public String getCodice() {
 		return codice;
 	}
-	private void setCodice(int codice) {
+	private void setCodice(String codice) {
 		this.codice = codice;
 	}
 	

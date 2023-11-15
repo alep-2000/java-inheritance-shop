@@ -4,7 +4,7 @@ public class Smartphone extends Prodotto {
 	private String IMEI;
 	private int qMemoria;
 	
-	public Smartphone(int codice, String nome, String descrizione, float prezzo, int iva, String IMEI, int qMemoria) {
+	public Smartphone(String codice, String nome, String descrizione, float prezzo, int iva, String IMEI, int qMemoria) {
 		
 		super(codice, nome, descrizione, prezzo, iva);
 		
@@ -26,6 +26,16 @@ public class Smartphone extends Prodotto {
 
 	public void setqMemoria(int qMemoria) {
 		this.qMemoria = qMemoria;
+	}
+	
+	@Override
+	public float getPrezzoIva(boolean fedelta) {
+		
+		if (!fedelta) return getPrezzoIva();
+		
+		return getqMemoria() < 32
+				? getPrezzoIva() * .95f
+				: super.getPrezzoIva(fedelta);
 	}
 	
 	@Override
