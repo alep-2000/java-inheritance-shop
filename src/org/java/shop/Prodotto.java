@@ -55,6 +55,12 @@ public class Prodotto {
 		return getPrezzo() * (100 + iva) / 100;
 	};
 	
+	public float getPrezzoIva(boolean fedelta) {
+		return fedelta
+				? (getPrezzoIva() * .98f)
+				: getPrezzoIva();
+	}
+	
 	public String getCodiceNome() {
 		return getCodice() + "-" + getNome();
 	}

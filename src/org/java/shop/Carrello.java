@@ -113,8 +113,22 @@ import java.util.Scanner;
 					}
 	        }
 	        
+	        System.out.println("Tessera fedeltà si/no: ");
+	        String strP = in.nextLine();
+	        boolean fedelta = strP.equals("si");
+	        
+	        float sum = 0;
 	        for (int j = 0; j <i; j++) {
-	            System.out.println(prodotti[j] + "\n");
+	            Prodotto p = prodotti[j];
+	            float prezzoFinale = p.getPrezzoIva(fedelta);
+	            
+	            sum += prezzoFinale;
+	            
+	            System.out.println("Nome: " + p.getNome());
+				System.out.println("Prezzo finale: " + prezzoFinale);
+				System.out.println("\n-------------------------\n");
 	        }
+	        
+	        System.out.println("Totale: " + sum);
 	    }
 	}
